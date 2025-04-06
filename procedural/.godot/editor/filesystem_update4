@@ -1,10 +1,4 @@
-res://level_segment_0.tscn
-res://nodes/player/player.tscn
-res://nodes/player/player.gd
 res://nodes/base/base.tscn
-res://nodes/level_segment_0.tscn
-res://nodes/level_segment_1.tscn
 res://nodes/base/base.gd
-res://nodes/level_segment_0.gd
-res://nodes/level_segment_end.tscn
-res://nodes/level_segment_2.tscn
+res://nodes/player/player.tscn
+res://nodes/level_segment_0.tscn
