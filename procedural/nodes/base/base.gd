@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var down: CollisionShape2D = $borders/down
 @onready var right: CollisionShape2D = $borders/right
-@onready var map: Node2D = $map
+@onready var mapNode: Node2D = $map
 
 var segmentBackground = preload("res://nodes/level_segment_0.tscn")
 
@@ -13,7 +13,7 @@ func _ready() -> void:
 	
 	var cols = 20
 	var rows = 20
-	var halls = 4
+	var halls = 10
 	
 	down.global_position.y = rows * 100
 	right.global_position.x = cols * 100
@@ -41,7 +41,7 @@ func _drawHalls(points,rows,cols):
 	for i in range(points.size()):
 		for x in range(3):
 			for y in range(3):
-				result[points[i][0]+x][points[i][1]+y] = 1
+				result[points[i][0]+y][points[i][1]+x] = 1
 	return result
 
 func _randomPointsGenerator(rangeX,rangeY,howMany):
@@ -63,8 +63,8 @@ func _randomPointsGenerator(rangeX,rangeY,howMany):
 func _checkAvailability(points,newPoint):
 	var distanceX
 	var distanceY
-	var minimalDistanceBetween = 5
-	var maximumDistanceBetween = 10
+	var minimalDistanceBetween = 4
+	var maximumDistanceBetween = 7
 	for i in range(points.size()):
 		distanceX = points[i][0] - newPoint[0]
 		distanceY = points[i][1] - newPoint[1]
@@ -81,12 +81,40 @@ func _checkAvailability(points,newPoint):
 	return 0
 
 func _drawRoads(points,map):
+	var result = []
+	for i in range(map.size()):
+		result.append([])
+		for ii in range(map[i].size()):
+			result[i].append(map[i][ii])
 	var centerPoints = []
 	for x in range(points.size()):
 		centerPoints.append([])
 		for y in range(points[x].size()):
 			centerPoints[x].append(points[x][y]+1)
-	var result = []
+		print(str(centerPoints))
+	for i in range(centerPoints.size()-1):
+		result = _drawLine(centerPoints[i],centerPoints[i+1],result)
+	return result
+
+func _drawLine(pointA,pointB,array):
+	var result = array
+	var aX = pointA[1]
+	var aY = pointA[0]
+	var bX = pointB[1]
+	var bY = pointB[0]
+	if aX > bX:
+		for x in range(aX-bX+1):
+			result[aY][aX - x] = 1
+	else:
+		for x in range(bX-aX+1): 
+			result[aY][aX + x] = 1
+	
+	if aY > bY:
+		for y in range(aY-bY+1):
+			result[aY - y][bX] = 1
+	else:
+		for y in range(bY-aY+1): 
+			result[aY + y][bX] = 1
 	
 	return result
 
@@ -97,4 +125,4 @@ func _drawMap(array):
 			if array[a][i] == 1:
 				var segment = segmentBackground.instantiate()
 				segment.global_position = drawingPosition
-				map.add_child(segment)
+				mapNode.add_child(segment)
