@@ -28,25 +28,29 @@ func _mapGenerator(rows,cols,halls):
 	var result = []
 	var points = []
 	points = _randomPointsGenerator(rows,cols,halls)
-	result = _drawPoints(points,halls,rows,cols)
+	result = _drawHalls(points,rows,cols)
 	return result
 
-func _drawPoints(points,howMany,rows,cols):
+func _drawHalls(points,rows,cols):
 	var result = []
 	for a in range(rows):
 		result.append([])
 		for i in range(cols):
 			result[a].append(0)
 		print(str(result[a]))
-	for i in range(howMany):
-		result[points[i][0]][points[i][1]] = 1
+	for i in range(points.size()):
+		for x in range(3):
+			for y in range(3):
+				result[points[i][0]+x][points[i][1]+y] = 1
 	return result
 
 func _randomPointsGenerator(rangeX,rangeY,howMany):
 	var points = []
-	points.append([randi()%rangeX,randi()%rangeY])
+	var x = rangeX - 2
+	var y = rangeY - 2
+	points.append([randi()%x,randi()%y])
 	for i in range(howMany-1): 
-		points.append([randi()%rangeX,randi()%rangeY])
+		points.append([randi()%x,randi()%y])
 	return points
 
 func _drawMap(array):
