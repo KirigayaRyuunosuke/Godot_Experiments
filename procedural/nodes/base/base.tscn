@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://ckxsyyrfcdfyi"]
 
-[ext_resource type="Script" uid="uid://kck2x2iw8g1k" path="res://nodes/base/base.gd" id="1_byqv7"]
+[ext_resource type="Script" uid="uid://884pcl3jn4yc" path="res://nodes/base/base.gd" id="1_goxcx"]
 [ext_resource type="PackedScene" uid="uid://b8vjc4qoyr5lm" path="res://nodes/player/player.tscn" id="3_d5ykm"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_goxcx"]
 normal = Vector2(1, 0)
 
 [node name="Base" type="Node2D"]
-script = ExtResource("1_byqv7")
+script = ExtResource("1_goxcx")
 
 [node name="map" type="Node2D" parent="."]
 
