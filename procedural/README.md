@@ -24,7 +24,7 @@ And then BOOM! Magic:
 _drawMap(_mapGenerator(rows,cols,halls))
 ```
 And basically thats it, but now, let's get serious
-## _mapGenerator(rows,cols,halls)
+## _mapGenerator
 This function could be in _ready(), but i wanted to keep all my functions in one place
 ```gdscript
 func _mapGenerator(rows,cols,halls):
@@ -77,7 +77,7 @@ func _checkAvailability(points,newPoint):
 		return 1
 	return 0
 ```
-## _drawHalls(points,rows,cols)
+## _drawHalls
 This function is used to generate array for the first time and then apply first changes into it. I used two for every time, what is easier to work with, even if it adds some nesting into my code
 ```gdscript
 func _drawHalls(points,rows,cols):
@@ -92,7 +92,7 @@ func _drawHalls(points,rows,cols):
 				result[points[i][0]+y][points[i][1]+x] = 1
 	return result
 ```
-## _drawRoads(points,map)
+## _drawRoads
 Last step to complete map is connecting halls, which was, in fact, harder than I expected, but finally, accomplished
 ```gdscript
 func _drawRoads(points,map):
@@ -131,8 +131,8 @@ func _drawLine(pointA,pointB,array):
 
 	return result
 ```
-This may seems odd at the first glance, and it is. Mostly because i switch X and Y places like 2times in that function, but it was easier for me to accomplish it this way. Now I can remove aX, aY and rest variables and just paste pointX[Y] in their place, but I wont do this, because of readability of my code
-## _drawMap(array)
+This may seems odd at the first glance, and it is. Mostly because i switch X and Y places like 2 times in that function, but it was easier for me to accomplish it this way. Now I can remove aX, aY and rest variables and just paste pointX[Y] in their place, but I wont do this, because of readability of my code
+## _drawMap
 When level is finally created we have to *print* it
 ```gdscript
 func _drawMap(array):
