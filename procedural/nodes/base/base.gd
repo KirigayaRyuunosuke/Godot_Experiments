@@ -6,7 +6,6 @@ extends Node2D
 
 var segmentBackground = preload("res://nodes/level_segment_0.tscn")
 
-var segmentPreload
 var drawingPosition = Vector2(0,0)
 
 func _ready() -> void:
@@ -17,11 +16,7 @@ func _ready() -> void:
 	
 	down.global_position.y = rows * 100
 	right.global_position.x = cols * 100
-	
-	# var result = []
-	# result = _mapGenerator(rows,cols,halls)
-	# _drawMap(result)
-	
+
 	_drawMap(_mapGenerator(rows,cols,halls))
 
 func _mapGenerator(rows,cols,halls):
@@ -81,11 +76,7 @@ func _checkAvailability(points,newPoint):
 	return 0
 
 func _drawRoads(points,map):
-	var result = []
-	for i in range(map.size()):
-		result.append([])
-		for ii in range(map[i].size()):
-			result[i].append(map[i][ii])
+	var result = map
 	var centerPoints = []
 	for x in range(points.size()):
 		centerPoints.append([])
