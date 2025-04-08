@@ -1,6 +1,6 @@
 # Procedural level generator for godot4.4
 ## My target
-I wanted to create simple procedural level generator to use in my godots project.
+I wanted to create simple procedural maze generator to use in my godots project.
 ## No AI code
 I sometimes asked AI why something doesn't work, because my debugging skills are pretty basic, but i didn't copied single line of code from it. I wanted to make it clear, why this code looks like shit ;D
 ## How does it work?
