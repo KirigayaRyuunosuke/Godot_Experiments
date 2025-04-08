@@ -55,7 +55,7 @@ func _randomPointsGenerator(rangeX,rangeY,howMany):
 			i += 1
 	return points
 ```
-# Update:
+### Update:
 Added small changes to generate halls on grade to avoid collapsing corridors
 ```gdscript
 var x = (rangeX-(rangeX%3))/3
