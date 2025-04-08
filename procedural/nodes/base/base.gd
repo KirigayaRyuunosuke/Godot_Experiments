@@ -41,15 +41,15 @@ func _drawHalls(points,rows,cols):
 
 func _randomPointsGenerator(rangeX,rangeY,howMany):
 	var points = []
-	var x = rangeX - 2
-	var y = rangeY - 2
-	points.append([randi()%x,randi()%y])
+	var x = (rangeX-(rangeX%3))/3
+	var y = (rangeY-(rangeY%3))/3
+	points.append([(randi()%x)*3,(randi()%y)*3])
 	var i = 0
 	var tries = 0
 	while i < howMany-1 && tries < 100:
 		tries += 1
-		var newX = randi()%x
-		var newY = randi()%y
+		var newX = (randi()%x)*3
+		var newY = (randi()%y)*3
 		if _checkAvailability(points,[newX,newY]):
 			points.append([newX,newY])
 			i += 1
@@ -82,7 +82,6 @@ func _drawRoads(points,map):
 		centerPoints.append([])
 		for y in range(points[x].size()):
 			centerPoints[x].append(points[x][y]+1)
-		print(str(centerPoints))
 	for i in range(centerPoints.size()-1):
 		result = _drawLine(centerPoints[i],centerPoints[i+1],result)
 	return result
