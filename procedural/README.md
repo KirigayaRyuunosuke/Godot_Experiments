@@ -146,7 +146,11 @@ func _drawMap(array):
 		for i in range(array[a].size()):
 			drawingPosition = Vector2(i*100,a*100)
 			if array[a][i] == 1:
-				var segment = segmentBackground.instantiate()
+				var segment = segmentFloor.instantiate()
+				segment.global_position = drawingPosition
+				mapNode.add_child(segment)
+			else:
+				var segment = segmentWall.instantiate()
 				segment.global_position = drawingPosition
 				mapNode.add_child(segment)
 

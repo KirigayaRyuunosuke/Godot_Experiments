@@ -1,12 +1,16 @@
 extends Node2D
 
+@onready var player: CharacterBody2D = $player
+
 @onready var down: CollisionShape2D = $borders/down
 @onready var right: CollisionShape2D = $borders/right
 @onready var mapNode: Node2D = $map
 
-var segmentBackground = preload("res://nodes/level_segment_0.tscn")
+var segmentFloor = preload("res://nodes/level_segment_0.tscn")
+var segmentWall = preload("res://nodes/level_segment_1.tscn")
 
 var drawingPosition = Vector2(0,0)
+var playerStartingPosition : Vector2
 
 func _ready() -> void:
 	
@@ -18,6 +22,7 @@ func _ready() -> void:
 	right.global_position.x = cols * 100
 
 	_drawMap(_mapGenerator(rows,cols,halls))
+	player.global_position = (playerStartingPosition*100) + Vector2(35,35)
 
 func _mapGenerator(rows,cols,halls):
 	var result = []
@@ -43,13 +48,15 @@ func _randomPointsGenerator(rangeX,rangeY,howMany):
 	var points = []
 	var x = (rangeX-(rangeX%3))/3
 	var y = (rangeY-(rangeY%3))/3
-	points.append([(randi()%x)*3,(randi()%y)*3])
+	var newX = (randi()%x)*3
+	var newY = (randi()%y)*3
+	points.append([newX,newY])
 	var i = 0
 	var tries = 0
 	while i < howMany-1 && tries < 100:
 		tries += 1
-		var newX = (randi()%x)*3
-		var newY = (randi()%y)*3
+		newX = (randi()%x)*3
+		newY = (randi()%y)*3
 		if _checkAvailability(points,[newX,newY]):
 			points.append([newX,newY])
 			i += 1
@@ -84,6 +91,7 @@ func _drawRoads(points,map):
 			centerPoints[x].append(points[x][y]+1)
 	for i in range(centerPoints.size()-1):
 		result = _drawLine(centerPoints[i],centerPoints[i+1],result)
+	playerStartingPosition = Vector2(centerPoints[0][1],centerPoints[0][0])
 	return result
 
 func _drawLine(pointA,pointB,array):
@@ -113,6 +121,10 @@ func _drawMap(array):
 		for i in range(array[a].size()):
 			drawingPosition = Vector2(i*100,a*100)
 			if array[a][i] == 1:
-				var segment = segmentBackground.instantiate()
+				var segment = segmentFloor.instantiate()
+				segment.global_position = drawingPosition
+				mapNode.add_child(segment)
+			else:
+				var segment = segmentWall.instantiate()
 				segment.global_position = drawingPosition
 				mapNode.add_child(segment)
