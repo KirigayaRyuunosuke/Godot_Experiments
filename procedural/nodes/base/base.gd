@@ -12,7 +12,7 @@ func _ready() -> void:
 	
 	var cols = 20
 	var rows = 20
-	var halls = 10
+	var halls = 15
 	
 	down.global_position.y = rows * 100
 	right.global_position.x = cols * 100
@@ -58,8 +58,8 @@ func _randomPointsGenerator(rangeX,rangeY,howMany):
 func _checkAvailability(points,newPoint):
 	var distanceX
 	var distanceY
-	var minimalDistanceBetween = 5
-	var maximumDistanceBetween = 8
+	var minimalDistanceBetween = 4
+	var maximumDistanceBetween = 100
 	for i in range(points.size()):
 		distanceX = points[i][0] - newPoint[0]
 		distanceY = points[i][1] - newPoint[1]

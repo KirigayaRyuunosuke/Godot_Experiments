@@ -66,8 +66,8 @@ I wished my halls not to collide with each other, so I created function, which s
 func _checkAvailability(points,newPoint):
 	var distanceX
 	var distanceY
-	var minimalDistanceBetween = 4
-	var maximumDistanceBetween = 7
+	var minimalDistanceBetween = 5
+	var maximumDistanceBetween = 100
 	for i in range(points.size()):
 		distanceX = points[i][0] - newPoint[0]
 		distanceY = points[i][1] - newPoint[1]
