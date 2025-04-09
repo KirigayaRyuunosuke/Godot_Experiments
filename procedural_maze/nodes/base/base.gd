@@ -66,7 +66,7 @@ func _checkAvailability(points,newPoint):
 	var distanceX
 	var distanceY
 	var minimalDistanceBetween = 4
-	var maximumDistanceBetween = 100
+	var maximumDistanceBetween = 9
 	for i in range(points.size()):
 		distanceX = points[i][0] - newPoint[0]
 		distanceY = points[i][1] - newPoint[1]
@@ -120,7 +120,7 @@ func _drawMap(array):
 	for a in range(array.size()):
 		for i in range(array[a].size()):
 			drawingPosition = Vector2(i*100,a*100)
-			if array[a][i] == 1:
+			if array[a][i] > 0:
 				var segment = segmentFloor.instantiate()
 				segment.global_position = drawingPosition
 				mapNode.add_child(segment)

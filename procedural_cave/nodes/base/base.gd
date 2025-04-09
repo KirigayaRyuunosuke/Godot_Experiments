@@ -56,7 +56,7 @@ func _clear(array):
 			if result[a][i] > 0:
 				zonesCounter[result[a][i]] += 1
 	for i in range(zonesCounter.size()):
-		if zonesCounter[i] < 10 || zonesCounter[i] > 30:
+		if zonesCounter[i] < 20 || zonesCounter[i] > 100:
 			result = _removeZone(result,i)
 	result = _remapZones(result)
 	return result
