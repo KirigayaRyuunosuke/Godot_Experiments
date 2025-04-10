@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://wmqs8qdnaouy" path="res://nodes/player/player.gd" id="1_4raw8"]
 
 [node name="player" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
 motion_mode = 1
 script = ExtResource("1_4raw8")
 

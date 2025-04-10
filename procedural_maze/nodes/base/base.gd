@@ -13,16 +13,16 @@ var drawingPosition = Vector2(0,0)
 var playerStartingPosition : Vector2
 
 func _ready() -> void:
-	
-	var cols = 20
-	var rows = 20
+	var tileSize = 50
+	var cols = 40
+	var rows = 40
 	var halls = 15
 	
-	down.global_position.y = rows * 100
-	right.global_position.x = cols * 100
+	down.global_position.y = rows * tileSize
+	right.global_position.x = cols * tileSize
 
-	_drawMap(_mapGenerator(rows,cols,halls))
-	player.global_position = (playerStartingPosition*100) + Vector2(35,35)
+	_drawMap(_mapGenerator(rows,cols,halls),tileSize)
+	player.global_position = (playerStartingPosition*tileSize) + Vector2(35,35)
 
 func _mapGenerator(rows,cols,halls):
 	var result = []
@@ -53,7 +53,7 @@ func _randomPointsGenerator(rangeX,rangeY,howMany):
 	points.append([newX,newY])
 	var i = 0
 	var tries = 0
-	while i < howMany-1 && tries < 100:
+	while i < howMany-1 && tries < 2500:
 		tries += 1
 		newX = (randi()%x)*3
 		newY = (randi()%y)*3
@@ -66,7 +66,7 @@ func _checkAvailability(points,newPoint):
 	var distanceX
 	var distanceY
 	var minimalDistanceBetween = 4
-	var maximumDistanceBetween = 9
+	var maximumDistanceBetween = 10
 	for i in range(points.size()):
 		distanceX = points[i][0] - newPoint[0]
 		distanceY = points[i][1] - newPoint[1]
@@ -116,10 +116,10 @@ func _drawLine(pointA,pointB,array):
 	
 	return result
 
-func _drawMap(array):
+func _drawMap(array,tileSize):
 	for a in range(array.size()):
 		for i in range(array[a].size()):
-			drawingPosition = Vector2(i*100,a*100)
+			drawingPosition = Vector2(i*tileSize,a*tileSize)
 			if array[a][i] > 0:
 				var segment = segmentFloor.instantiate()
 				segment.global_position = drawingPosition

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://df7slbdfqo4a1"]
 
 [node name="level_segment_0" type="Node2D"]
+scale = Vector2(0.5, 0.5)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
