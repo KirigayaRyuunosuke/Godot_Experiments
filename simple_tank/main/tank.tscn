@@ -24,6 +24,7 @@ position = Vector2(-96, -64)
 polygon = PackedVector2Array(64, 0, 128, 0, 192, 56, 256, 56, 256, 72, 192, 72, 128, 128, 64, 128, 0, 128, 0, 64, 0, 0)
 
 [node name="direction" type="Node2D" parent="."]
+position = Vector2(104, 0)
 
 [node name="shape" type="Polygon2D" parent="direction"]
 position = Vector2(24, 0)

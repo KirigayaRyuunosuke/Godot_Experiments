@@ -3,22 +3,29 @@ extends CharacterBody2D
 @onready var direction: Node2D = $direction
 
 var angle
-const maxAngle = 0.05
-var speed = 300
+const maxAngle = 0.01
+var speed = 150
 
 func getInput():
-	return Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	return Input.get_vector("move_left", "move_right", "move_up", "move_down")
 
 func _physics_process(_delta: float) -> void:
-	direction.rotation = get_angle_to(self.position + getInput())
-	angle = get_angle_to(direction.get_child(0).global_position)
-	print(angle)
-	if angle < 0 && angle < -maxAngle:
+	angle = get_angle_to(self.position + getInput())
+	if angle < 0 && angle > -maxAngle*50:
 		angle = -maxAngle
-	if angle > 0 && angle > maxAngle:
+		velocity = getInput() * speed
+	elif angle > 0 && angle < maxAngle*50:
 		angle = maxAngle
+		velocity = getInput() * speed
+	elif angle < 0 && angle < -maxAngle:
+		angle = -maxAngle
+		velocity = Vector2(0,0)
+	elif angle > 0 && angle > maxAngle:
+		angle = maxAngle
+		velocity = Vector2(0,0)
+	else:
+		velocity = getInput() * speed
+	move_and_slide()
 	rotate(angle)
 	if angle < 0.0001 && angle >= 0 || angle > -0.0001 && angle <= 0:
 		pass
-	velocity = getInput() * speed
-	move_and_slide()
