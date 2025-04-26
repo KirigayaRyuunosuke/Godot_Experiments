@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://cn2fgnvget3r7"]
+
+[ext_resource type="Script" uid="uid://pfwg7ioqfbfp" path="res://main/tank.gd" id="1_md02o"]
+[ext_resource type="Script" uid="uid://bjf4n68e7d8lf" path="res://main/turret.gd" id="1_wi8sv"]
+
+[node name="tank" type="CharacterBody2D"]
+script = ExtResource("1_md02o")
+
+[node name="chasis" type="CollisionPolygon2D" parent="."]
+position = Vector2(-53.15, 0)
+scale = Vector2(1.14844, 1)
+polygon = PackedVector2Array(-64, -64, 129.872, -64, 129.872, 64, -64, 64)
+
+[node name="shape" type="Polygon2D" parent="chasis"]
+position = Vector2(-65.1755, -64)
+color = Color(0.268572, 0.476828, 0.29069, 1)
+polygon = PackedVector2Array(0, 0, 195.048, 0, 202.014, 64, 195.048, 128, 0, 128)
+
+[node name="turret" type="CharacterBody2D" parent="."]
+script = ExtResource("1_wi8sv")
+
+[node name="Polygon2D" type="Polygon2D" parent="turret"]
+position = Vector2(-96, -64)
+polygon = PackedVector2Array(64, 0, 128, 0, 192, 56, 256, 56, 256, 72, 192, 72, 128, 128, 64, 128, 0, 128, 0, 64, 0, 0)
+
+[node name="direction" type="Node2D" parent="."]
+
+[node name="shape" type="Polygon2D" parent="direction"]
+position = Vector2(24, 0)
+color = Color(0.268572, 0.476828, 0.29069, 1)
+polygon = PackedVector2Array(192, -16, 192, 16, 216, 0)
