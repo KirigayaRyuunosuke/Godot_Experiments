@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://harh4lgy8dr1"]
+
+[ext_resource type="Script" uid="uid://cikseww5oubc2" path="res://main/aiming_trianlge.gd" id="1_a1x35"]
+
+[node name="aimingTrianlge" type="CharacterBody2D"]
+script = ExtResource("1_a1x35")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(-30, 0)
+polygon = PackedVector2Array(0, -30, 60, 0, 0, 30)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+color = Color(0.156863, 1, 1, 1)
+polygon = PackedVector2Array(0, -5, 10, 0, 0, 5, -10, 0)
