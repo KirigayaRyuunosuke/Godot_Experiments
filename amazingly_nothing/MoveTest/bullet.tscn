@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://pypm26xoe7cg"]
+
+[ext_resource type="Script" uid="uid://b2p87ww4ngbav" path="res://MoveTest/bullet.gd" id="1_g1q7d"]
+
+[node name="bullet" type="CharacterBody2D"]
+script = ExtResource("1_g1q7d")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, -8, 16, -8, 24, 0, 16, 8, 0, 8)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(0, -8, 16, -8, 24, 0, 16, 8, 0, 8)
+
+[connection signal="tree_entered" from="." to="." method="_on_tree_entered"]

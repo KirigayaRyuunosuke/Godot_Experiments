@@ -1,8 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1745703519
+::res://::1745755963
 icon.svg::CompressedTexture2D/CompressedTexture2D::6879501854528891398::1745699971::1745699975::1::::<><><>0<>0<>d06fb342abf8400d07431acdb4c6372d<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-::res://main/::1745703152
-main.tscn::PackedScene::3956748791343053664::1745703152::0::1::::<><><>0<>0<><>::uid://cn2fgnvget3r7::::res://main/tank.tscn
-tank.gd::GDScript::1064502725708391333::1745703152::0::1::::<>CharacterBody2D<><>0<>0<><>::
-tank.tscn::PackedScene::5741349549290681002::1745703152::0::1::::<><><>0<>0<><>::uid://pfwg7ioqfbfp::::res://main/tank.gd<>uid://bjf4n68e7d8lf::::res://main/turret.gd
-turret.gd::GDScript::3030227852743743575::1745702820::0::1::::<>CharacterBody2D<><>0<>0<><>::
+::res://main/::1745752309
+main.tscn::PackedScene::3956748791343053664::1745752309::0::1::::<><><>0<>0<><>::uid://cn2fgnvget3r7::::res://main/tank.tscn
+tank.gd::GDScript::1064502725708391333::1745752309::0::1::::<>CharacterBody2D<><>0<>0<><>::
+tank.tscn::PackedScene::5741349549290681002::1745752309::0::1::::<><><>0<>0<><>::uid://pfwg7ioqfbfp::::res://main/tank.gd<>uid://bjf4n68e7d8lf::::res://main/turret.gd
+turret.gd::GDScript/GDScript::3030227852743743575::1745704446::0::1::::<>CharacterBody2D<><>0<>0<><>::

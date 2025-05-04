@@ -1,2 +1,4 @@
-res://node_2d.gd
-res://main.tscn
+res://MoveTest/bullet.gd
+res://MoveTest/bullet.tscn
+res://MoveTest/main.tscn
+res://MoveTest/main.gd
