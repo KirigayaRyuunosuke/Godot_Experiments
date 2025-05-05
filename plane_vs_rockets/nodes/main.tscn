@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckwegyd3ytvjk"]
+
+[ext_resource type="Script" uid="uid://dehif3wr0flin" path="res://nodes/main.gd" id="1_a3ry3"]
+[ext_resource type="PackedScene" uid="uid://bjf3t8vkg6dgj" path="res://nodes/plane/plane.tscn" id="1_xpfdc"]
+[ext_resource type="PackedScene" uid="uid://l0bbonmf5b5w" path="res://nodes/rocket/rocket.tscn" id="3_ufc4x"]
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_a3ry3")
+
+[node name="plane" parent="." instance=ExtResource("1_xpfdc")]
+position = Vector2(554, 299)
+
+[node name="rocket" parent="." instance=ExtResource("3_ufc4x")]
+position = Vector2(358, 313)
+
+[node name="rocket2" parent="." instance=ExtResource("3_ufc4x")]

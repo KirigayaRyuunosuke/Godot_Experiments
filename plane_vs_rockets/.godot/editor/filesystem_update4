@@ -1,0 +1,6 @@
+res://nodes/plane/plane.tscn
+res://nodes/plane/plane.gd
+res://nodes/main.tscn
+res://nodes/rocket/rocket.tscn
+res://nodes/main.gd
+res://nodes/rocket/rocket.gd
