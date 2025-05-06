@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://bks2l0o2al5b2"]
+
+[ext_resource type="Script" uid="uid://btv4e03n2th6r" path="res://nodes/rockets/blue_blue/rocket.gd" id="1_vbsfj"]
+
+[node name="rocket" type="CharacterBody2D"]
+script = ExtResource("1_vbsfj")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(40, 0, 32, -8, -32, -8, -40, -16, -56, -16, -40, 0, -56, 16, -40, 16, -32, 8, 32, 8)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+color = Color(0, 0, 1, 1)
+polygon = PackedVector2Array(40, 0, 32, -8, 23, -8, 23, 8, 32, 8)
+
+[node name="Polygon2D3" type="Polygon2D" parent="."]
+color = Color(0, 0, 1, 1)
+polygon = PackedVector2Array(16, -8, 16, 8, 10, 8, 10, -8)
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="booster" type="Polygon2D" parent="."]
+color = Color(1, 0.498039, 0.0117647, 1)
+polygon = PackedVector2Array(-48, -8, -56, -8, -64, 0, -56, 8, -48, 8, -40, 0)
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hitbox"]
+polygon = PackedVector2Array(40, 0, 32, -8, -24, -8, -24, 8, 32, 8)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]

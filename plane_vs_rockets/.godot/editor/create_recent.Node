@@ -1,3 +1,10 @@
+Node2D
+Marker2D
+Polygon2D
+Timer
+Label
+CanvasLayer
+CollisionPolygon2D
+Area2D
 CharacterBody2D
 Camera2D
-Polygon2D
