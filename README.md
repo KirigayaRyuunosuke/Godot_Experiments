@@ -4,7 +4,8 @@
 Here I'm doing some casual researches
 
 ## plane_vs_rockets
-This is closest to be an actual game
+This is closest to be an actual game</br>
+Score system made with plugin from 2shady4u: https://github.com/2shady4u/godot-sqlite
 
 ## procedural_maze
 In this project I created a simple procedural map generator
