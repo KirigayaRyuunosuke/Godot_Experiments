@@ -30,5 +30,6 @@ offset_bottom = 23.0
 position = Vector2(576, 320)
 
 [node name="rocket_spawner" parent="plane" instance=ExtResource("3_ufc4x")]
+color = Color(1, 1, 1, 0)
 
 [node name="rockets" type="Node2D" parent="."]

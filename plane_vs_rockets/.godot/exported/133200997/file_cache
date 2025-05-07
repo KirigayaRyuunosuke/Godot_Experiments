@@ -1,0 +1,8 @@
+res://nodes/menu/end.tscn::7bfebd7f0a586f2d90f42a2e692accf9::1746646460::res://.godot/exported/133200997/export-3a3987e903977e80914c3e5c1950c2cf-end.scn
+res://nodes/menu/menu.tscn::2115df1f84e6e099d70330cfd8c17bfc::1746646460::res://.godot/exported/133200997/export-5a2075e2fc4d8e4511e889b247d16df4-menu.scn
+res://nodes/misc/explosion.tscn::9d3e6157a8a9efb18bae85f41bfe2e9d::1746640772::res://.godot/exported/133200997/export-5ba92cecf7b97a4ae1924aed88c387d1-explosion.scn
+res://nodes/plane/plane.tscn::fb81b54218f59cf886bb0de84dfa427c::1746640771::res://.godot/exported/133200997/export-71b1a608abf47ec475487faa2e37973a-plane.scn
+res://nodes/rockets/multiplicator/rocket.tscn::122770749678f12f3b304272bd632319::1746640772::res://.godot/exported/133200997/export-48d11645dc2b1c5f2e7453a0eafa4cb1-rocket.scn
+res://nodes/rockets/normal/rocket.tscn::5d1cdf6b601b4c9300bd8e8e1296bbe6::1746640772::res://.godot/exported/133200997/export-e7b7445155c94ae99b2ecc4244661a23-rocket.scn
+res://nodes/rocket_spawner/rocket_spawner.tscn::d526695dedf672e584c174c90f88eb25::1746640772::res://.godot/exported/133200997/export-2621cc2f0d570e99dfd303ac47ba568d-rocket_spawner.scn
+res://nodes/main.tscn::50928e5d404787164049143ab02eff1a::1746646664::res://.godot/exported/133200997/export-91186552c2d1def800f1833d789a406f-main.scn

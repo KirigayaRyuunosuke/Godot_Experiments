@@ -1,6 +1,6 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1746642680
-game.gd::GDScript::5444088932179666107::1746642634::0::1::::<>Node<><>0<>0<><>::
+::res://::1746645125
+game.gd::GDScript::5444088932179666107::1746644326::0::1::::<>Node<><>0<>0<><>::
 icon.svg::CompressedTexture2D/CompressedTexture2D::231955432037400200::1746477761::1746477765::1::::<><><>0<>0<>6cb72d8936c1eabbc53b90d4c2d238ba<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://addons/::1746642657
 ::res://addons/godot-sqlite/::1746642190
@@ -25,13 +25,13 @@ plugin.cfg::TextFile/TextFile::-1::1746641051::0::1::::<><><>0<>0<><>::
 ::res://addons/godot-sqlite/bin/libgodot-cpp.ios.template_release.xcframework/::1746641051
 ::res://addons/godot-sqlite/bin/libgodot-cpp.ios.template_release.xcframework/ios-arm64/::1746641051
 ::res://addons/godot-sqlite/bin/libgodot-cpp.ios.template_release.xcframework/ios-arm64_x86_64-simulator/::1746641051
-::res://nodes/::1746640813
+::res://nodes/::1746644911
 main.gd::GDScript/GDScript::7454964240267028641::1746640730::0::1::::<>Node2D<><>0<>0<><>::
-main.tscn::PackedScene/PackedScene::5520400963590188264::1746640813::0::1::::<><><>0<>0<><>::uid://dehif3wr0flin::::res://nodes/main.gd<>uid://bjf3t8vkg6dgj::::res://nodes/plane/plane.tscn<>uid://uyd7nbyxnh5p::::res://nodes/rocket_spawner/rocket_spawner.tscn
-::res://nodes/menu/::1746642577
+main.tscn::PackedScene::5520400963590188264::1746644911::0::1::::<><><>0<>0<><>::uid://dehif3wr0flin::::res://nodes/main.gd<>uid://bjf3t8vkg6dgj::::res://nodes/plane/plane.tscn<>uid://uyd7nbyxnh5p::::res://nodes/rocket_spawner/rocket_spawner.tscn
+::res://nodes/menu/::1746644911
 end.tscn::PackedScene/PackedScene::7659077774856838282::1746640772::0::1::::<><><>0<>0<><>::uid://b07urir2o3l5y::::res://nodes/menu/menu.gd
-menu.gd::GDScript/GDScript::4208447008820591648::1746615060::0::1::::<>Node2D<><>0<>0<><>::
-menu.tscn::PackedScene::5220344357178782731::1746642577::0::1::::<><><>0<>0<><>::uid://b07urir2o3l5y::::res://nodes/menu/menu.gd
+menu.gd::GDScript::4208447008820591648::1746644911::0::1::::<>Node2D<><>0<>0<><>::
+menu.tscn::PackedScene::5220344357178782731::1746644893::0::1::::<><><>0<>0<><>::uid://b07urir2o3l5y::::res://nodes/menu/menu.gd
 ::res://nodes/misc/::1746640772
 explosion.gd::GDScript/GDScript::4227275926829044193::1746639571::0::1::::<>Node2D<><>0<>0<><>::
 explosion.tscn::PackedScene/PackedScene::4587391567275399071::1746640772::0::1::::<><><>0<>0<><>::uid://b1hyu8eyr6106::::res://nodes/misc/explosion.gd

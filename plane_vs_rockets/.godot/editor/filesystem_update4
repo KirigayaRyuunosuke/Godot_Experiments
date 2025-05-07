@@ -1,0 +1,5 @@
+res://nodes/main.tscn
+res://game.gd
+res://nodes/menu/menu.tscn
+res://nodes/menu/menu.gd
+res://nodes/menu/end.tscn
