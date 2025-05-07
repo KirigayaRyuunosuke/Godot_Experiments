@@ -10,12 +10,21 @@ extends CharacterBody2D
 var angle
 const maxAngle = 0.1
 
-const speed = 300.0
+const baseSpeed = 300
+var speed = 300.0
 
 func getInput():
 	return Input.get_vector("move_left", "move_right", "move_up", "move_down")
 
 func _physics_process(_delta: float) -> void:
+	if Input.is_action_just_pressed("speed_boost") && speed == baseSpeed:
+		speed = 450
+	
+	if speed > 300:
+		speed -= 1
+	if speed < baseSpeed:
+		speed = baseSpeed
+	
 	if getInput():
 		directionNode.look_at(global_position + getInput())
 	velocity = transform.x * speed
@@ -38,5 +47,6 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 
-func _on_hitbox_area_entered(area: Area2D) -> void:
-	print(area.get_parent().name)
+func _on_hitbox_area_entered(_area: Area2D) -> void:
+	queue_free()
+	Game.end()

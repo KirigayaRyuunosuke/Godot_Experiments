@@ -22,7 +22,13 @@ text = "SCORE : XXX"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="fps" type="Label" parent="UI"]
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="plane" parent="." instance=ExtResource("1_xpfdc")]
 position = Vector2(576, 320)
 
 [node name="rocket_spawner" parent="plane" instance=ExtResource("3_ufc4x")]
+
+[node name="rockets" type="Node2D" parent="."]

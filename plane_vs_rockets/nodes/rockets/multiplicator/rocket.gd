@@ -7,8 +7,12 @@ extends CharacterBody2D
 @onready var booster: Polygon2D = $booster
 @onready var timer: Timer = $Timer
 
+var normalRocket = preload("res://nodes/rockets/normal/rocket.tscn")
+
+var score = 3
+
 var angle
-const maxAngle = 0.025
+var maxAngle = 0.025
 var speed = 250
 
 var acceleration = 5
@@ -39,10 +43,8 @@ func _physics_process(_delta: float) -> void:
 	if accelerating:
 		speed += acceleration
 	else:
-		speed -= deacceleration
-		if speed < Game.plane.speed:
-			Game.points += 1
-			queue_free()
+		multiplicate()
+			
 	
 	
 	if angle >= maxAngle || angle <= -maxAngle:
@@ -54,6 +56,18 @@ func _physics_process(_delta: float) -> void:
 		rotate(angle)
 		move_and_slide()
 
+func multiplicate():
+	for i in range(3):
+		var rocket = normalRocket.instantiate()
+		rocket.global_position = global_position - transform.x * 50 * i
+		rocket.rocketType = [1,0]
+		rocket.rotation = rotation
+		rocket.scale *= 0.33
+		rocket.speed = speed
+		rocket.maxAngle = 0.05
+		rocket.score = 1
+		Game.main.add_child(rocket)
+	queue_free()
 
 func _on_timer_timeout() -> void:
 	accelerating = 0
@@ -62,5 +76,5 @@ func _on_timer_timeout() -> void:
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if !area.get_parent().name == "plane":
-		Game.points += 1
-	queue_free()
+		Game.points += score
+	#queue_free()
