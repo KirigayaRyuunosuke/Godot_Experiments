@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var explosion: Node2D = $explosion
+
 @onready var body: Polygon2D = $body
 @onready var tip: Polygon2D = $tip
 @onready var stripe: Polygon2D = $stripe
@@ -9,17 +11,17 @@ extends CharacterBody2D
 
 var normalRocket = preload("res://nodes/rockets/normal/rocket.tscn")
 
-var score = 3
+var score := 3
 
-var angle
-var maxAngle = 0.025
-var speed = 250
+var angle : float
+var maxAngle := 0.025
+var speed := 250.0
 
-var acceleration = 5
-var deacceleration = 3
+var acceleration := 5
+var deacceleration := 3
 var accelerating: bool = 1
 
-var rocketType = [0,0]
+var rocketType := [0,0]
 
 func _ready() -> void:
 	if rocketType[0] == 0:
@@ -58,7 +60,7 @@ func _physics_process(_delta: float) -> void:
 
 func multiplicate():
 	for i in range(3):
-		var rocket = normalRocket.instantiate()
+		var rocket := normalRocket.instantiate()
 		rocket.global_position = global_position - transform.x * 50 * i
 		rocket.rocketType = [1,0]
 		rocket.rotation = rotation
@@ -75,6 +77,15 @@ func _on_timer_timeout() -> void:
 
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
-	if !area.get_parent().name == "plane":
+	if !area.get_parent().name == "plane" && !area.get_parent().is_in_group("powerups"):
 		Game.points += score
-	#queue_free()
+		explode()
+
+func explode():
+	timer.stop()
+	speed = 0
+	velocity = Vector2.ZERO
+	body.hide()
+	explosion.show()
+	if explosion.timer.is_stopped():
+		explosion.timer.start()

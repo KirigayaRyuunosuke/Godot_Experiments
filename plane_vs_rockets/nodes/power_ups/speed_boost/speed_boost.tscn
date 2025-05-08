@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://bro6gmq6idyrc"]
+
+[ext_resource type="Script" uid="uid://c0cwgpa681bbm" path="res://nodes/power_ups/speed_boost/speed_boost.gd" id="1_w8yfd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6ou0o"]
+
+[node name="speed_boost" type="Node2D" groups=["powerups"]]
+script = ExtResource("1_w8yfd")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(-32, 40)
+color = Color(1, 0.716667, 0, 1)
+polygon = PackedVector2Array(56, -16, 48, -32, 32, -40, 40, -56, 32, -72, 24, -56, 32, -40, 16, -32, 8, -16, 24, -24, 32, -40, 40, -24)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+position = Vector2(-32, 40)
+color = Color(0.00392157, 0, 0, 0.415686)
+polygon = PackedVector2Array(32, -72, 40, -56, 32, -40, 48, -32, 56, -16, 32, -40, 24, -24, 8, -16, 32, -40)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(5, 5)
+shape = SubResource("CircleShape2D_6ou0o")
+one_way_collision_margin = 0.0
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

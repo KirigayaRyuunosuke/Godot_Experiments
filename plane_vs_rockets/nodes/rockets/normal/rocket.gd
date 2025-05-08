@@ -3,7 +3,6 @@ extends CharacterBody2D
 @onready var body: Node2D = $body
 @onready var tip: Polygon2D = $body/tip
 @onready var stripe: Polygon2D = $body/stripe
-@onready var hitbox: Area2D = $hitbox
 
 @onready var explosion: Node2D = $explosion
 
@@ -12,17 +11,17 @@ extends CharacterBody2D
 
 var alive : bool = 1
 
-var score = 3
+var score := 3
 
 var angle
-var maxAngle = 0.025
-var speed = 250
+var maxAngle := 0.025
+var speed := 250.0
 
-var acceleration = 5
-var deacceleration = 3
+var acceleration := 5
+var deacceleration := 3
 var accelerating: bool = 1
 
-var rocketType = [0,0]
+var rocketType := [0,0]
 
 func _ready() -> void:
 	if rocketType[0] == 0:
@@ -70,10 +69,10 @@ func _on_timer_timeout() -> void:
 
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
-	if !area.get_parent().name == "plane" && alive:
+	if !area.get_parent().name == "plane" && !area.get_parent().is_in_group("powerups"):
 		Game.points += score
 		alive = 0
-	explode()
+		explode()
 
 func explode():
 	speed = 0

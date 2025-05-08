@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://uyd7nbyxnh5p"]
 
-[ext_resource type="Script" uid="uid://bno0mx3ybl14r" path="res://nodes/rocket_spawner/rocket_spawner.gd" id="1_38ple"]
+[ext_resource type="Script" uid="uid://bno0mx3ybl14r" path="res://nodes/spawners/rocket_spawner.gd" id="1_38ple"]
 
 [node name="rocket_spawner" type="Polygon2D"]
 polygon = PackedVector2Array(192, 0, 200, -8, 200, 8)
@@ -8,8 +8,9 @@ script = ExtResource("1_38ple")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
+autostart = true
 
-[node name="Marker2D" type="Node2D" parent="."]
+[node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(704, 0)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

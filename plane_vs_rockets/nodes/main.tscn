@@ -1,11 +1,34 @@
-[gd_scene load_steps=4 format=3 uid="uid://ckwegyd3ytvjk"]
+[gd_scene load_steps=6 format=3 uid="uid://ckwegyd3ytvjk"]
 
 [ext_resource type="Script" uid="uid://dehif3wr0flin" path="res://nodes/main.gd" id="1_a3ry3"]
 [ext_resource type="PackedScene" uid="uid://bjf3t8vkg6dgj" path="res://nodes/plane/plane.tscn" id="1_xpfdc"]
-[ext_resource type="PackedScene" uid="uid://uyd7nbyxnh5p" path="res://nodes/rocket_spawner/rocket_spawner.tscn" id="3_ufc4x"]
+[ext_resource type="PackedScene" uid="uid://crxdbr7ma4fmd" path="res://nodes/parallax/clouds.tscn" id="2_y2wr3"]
+[ext_resource type="PackedScene" uid="uid://uyd7nbyxnh5p" path="res://nodes/spawners/rocket_spawner.tscn" id="3_ufc4x"]
+[ext_resource type="PackedScene" uid="uid://6w27o1nvdkcj" path="res://nodes/spawners/booster_spawner.tscn" id="4_k8dvw"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_a3ry3")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-432, -472)
+motion_mirroring = Vector2(2000, 2000)
+
+[node name="clouds" parent="ParallaxBackground/ParallaxLayer" instance=ExtResource("2_y2wr3")]
+position = Vector2(-472, -688)
+
+[node name="clouds2" parent="ParallaxBackground/ParallaxLayer" instance=ExtResource("2_y2wr3")]
+position = Vector2(528, -688)
+rotation = 0.785398
+
+[node name="clouds3" parent="ParallaxBackground/ParallaxLayer" instance=ExtResource("2_y2wr3")]
+position = Vector2(-472, 312)
+rotation = -1.5708
+
+[node name="clouds4" parent="ParallaxBackground/ParallaxLayer" instance=ExtResource("2_y2wr3")]
+position = Vector2(528, 324)
+rotation = 3.14159
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -32,4 +55,8 @@ position = Vector2(576, 320)
 [node name="rocket_spawner" parent="plane" instance=ExtResource("3_ufc4x")]
 color = Color(1, 1, 1, 0)
 
+[node name="booster_spawner" parent="plane" instance=ExtResource("4_k8dvw")]
+
 [node name="rockets" type="Node2D" parent="."]
+
+[node name="boosters" type="Node2D" parent="."]

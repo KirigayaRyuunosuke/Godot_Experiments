@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://crxdbr7ma4fmd"]
+
+[node name="clouds" type="Node2D"]
+modulate = Color(0.695503, 0.695503, 0.695503, 0.811765)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-128, -128, -104, -136, -96, -152, -80, -168, -48, -168, -24, -152, 8, -136, 40, -144, 64, -168, 96, -176, 152, -144, 176, -96, 216, -32, 248, -8, 304, 8, 344, 64, 336, 88, 280, 96, 256, 128, 264, 160, 248, 216, 208, 232, 168, 208, 152, 144, 128, 112, 88, 112, 32, 152, -40, 208, -88, 208, -144, 192, -168, 152, -184, 88, -192, 8, -208, -56, -200, -96, -168, -120)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+color = Color(0.505344, 0.505344, 0.505344, 1)
+polygon = PackedVector2Array(-176, -80, -152, -96, -104, -104, -80, -104, -64, -144, -32, -104, 8, -88, 8, -80, -40, -96, -64, -128, -72, -96, -112, -96, -152, -88)
+
+[node name="Polygon2D3" type="Polygon2D" parent="."]
+color = Color(0.505882, 0.505882, 0.505882, 1)
+polygon = PackedVector2Array(56, -104, 88, -128, 112, -128, 144, -104, 176, -64, 184, -40, 168, -56, 136, -96, 112, -120, 88, -120)
+
+[node name="Polygon2D4" type="Polygon2D" parent="."]
+color = Color(0.505882, 0.505882, 0.505882, 1)
+polygon = PackedVector2Array(16, 128, 72, 80, 144, 80, 184, 128, 144, 72, 72, 72)
+
+[node name="Polygon2D5" type="Polygon2D" parent="."]
+color = Color(0.505882, 0.505882, 0.505882, 1)
+polygon = PackedVector2Array(-24, -32, -48, -16, -56, 16, -48, 56, -24, 72, -40, 48, -48, 16, -40, -16)
+
+[node name="Polygon2D6" type="Polygon2D" parent="."]
+color = Color(0.505882, 0.505882, 0.505882, 1)
+polygon = PackedVector2Array(176, 184, 208, 216, 240, 200, 248, 160, 232, 192, 208, 208)
+
+[node name="Polygon2D7" type="Polygon2D" parent="."]
+color = Color(0.505882, 0.505882, 0.505882, 1)
+polygon = PackedVector2Array(224, -8, 288, 24, 312, 64, 288, 80, 264, 104, 288, 72, 280, 32)
+
+[node name="Polygon2D8" type="Polygon2D" parent="."]
+color = Color(0.505882, 0.505882, 0.505882, 1)
+polygon = PackedVector2Array(-136, 48, -136, 128, -120, 160, -80, 184, -16, 168, -72, 176, -112, 152, -128, 120)
+
+[node name="Polygon2D9" type="Polygon2D" parent="."]
+color = Color(0.51, 0.51, 0.51, 1)
+polygon = PackedVector2Array(64, -48, 96, -32, 144, 0, 144, 24, 136, 48, 136, 24, 136, 0, 96, -24)

@@ -131,4 +131,18 @@ polygon = PackedVector2Array(-8, -32, 0, -24, 0, -32)
 color = Color(0, 1, 1, 1)
 polygon = PackedVector2Array(48, 16, 48, 0, 64, 0)
 
+[node name="shield" type="Node2D" parent="."]
+visible = false
+
+[node name="Polygon2D" type="Polygon2D" parent="shield"]
+color = Color(0, 1, 1, 0.305882)
+polygon = PackedVector2Array(-16, -88, 16, -88, 64, -64, 88, -16, 88, 16, 64, 64, 16, 88, -16, 88, -64, 64, -88, 16, -88, -16, -64, -64)
+
+[node name="shieldArea" type="Area2D" parent="shield"]
+
+[node name="ShieldPolygon2D" type="CollisionPolygon2D" parent="shield/shieldArea"]
+polygon = PackedVector2Array(-88, -16, -64, -64, -16, -88, 16, -88, 64, -64, 88, -16, 88, 16, 64, 64, 16, 88, -16, 88, -64, 64, -88, 16)
+disabled = true
+
 [connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="area_entered" from="shield/shieldArea" to="." method="_on_shield_area_area_entered"]

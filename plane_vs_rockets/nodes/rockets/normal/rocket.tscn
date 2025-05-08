@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://co2kl41h1fpns" path="res://nodes/rockets/normal/rocket.gd" id="1_fo4iy"]
 [ext_resource type="PackedScene" uid="uid://b6mfw0h6ogij4" path="res://nodes/misc/explosion.tscn" id="2_r0q8g"]
 
-[node name="rocket" type="CharacterBody2D"]
+[node name="rocket" type="CharacterBody2D" groups=["rockets"]]
 script = ExtResource("1_fo4iy")
 
 [node name="Timer" type="Timer" parent="."]

@@ -1,8 +1,11 @@
 extends Node2D
 
 @onready var plane: CharacterBody2D = $plane
-@onready var score: Label = $UI/score
+
+@onready var boosters: Node2D = $boosters
 @onready var rockets: Node2D = $rockets
+
+@onready var score: Label = $UI/score
 @onready var fps: Label = $UI/fps
 
 func _ready() -> void:

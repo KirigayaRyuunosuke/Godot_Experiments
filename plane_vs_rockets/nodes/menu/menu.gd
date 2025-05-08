@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var high_score: Label = $CanvasLayer/HighScore
 
-var game = load("res://nodes/main.tscn")
+var game := load("res://nodes/main.tscn")
 
 
 func _physics_process(_delta: float) -> void:
